@@ -1,0 +1,70 @@
+{
+  "name": "explainability-report-mcp",
+  "description": "AI Explainability and Transparency Reports for AI agents. Capabilities: transparency scan, model card generation, decision explanations, Article 13 audit, impact assessments. Built by MEOK AI Labs.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "quick_scan",
+      "description": "Describe an AI system, get instant transparency assessment. No API key required.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "description": { "type": "string" }
+        },
+        "required": ["description"]
+      }
+    },
+    {
+      "name": "generate_model_card",
+      "description": "Generate an EU AI Act compliant model card.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "model_name": { "type": "string" },
+          "purpose": { "type": "string" },
+          "training_data": { "type": "string" },
+          "api_key": { "type": "string" }
+        },
+        "required": ["model_name", "purpose"]
+      }
+    },
+    {
+      "name": "explain_decision",
+      "description": "Generate human-readable explanation of an AI decision.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "decision": { "type": "string" },
+          "factors": { "type": "string" },
+          "api_key": { "type": "string" }
+        },
+        "required": ["decision"]
+      }
+    },
+    {
+      "name": "transparency_audit",
+      "description": "Assess against EU AI Act Article 13 transparency requirements.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "system_description": { "type": "string" },
+          "api_key": { "type": "string" }
+        },
+        "required": ["system_description"]
+      }
+    },
+    {
+      "name": "create_impact_assessment",
+      "description": "Generate DPIA/AIIA template for an AI system.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "system_name": { "type": "string" },
+          "affected_groups": { "type": "string" },
+          "api_key": { "type": "string" }
+        },
+        "required": ["system_name"]
+      }
+    }
+  ]
+}
