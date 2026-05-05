@@ -1,66 +1,38 @@
-# AI Explainability Report MCP Server
+<div align="center">
 
-By [MEOK AI Labs](https://meok.ai) | The only MCP server for AI explainability and transparency reports.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/explainability-report-mcp)](https://github.com/CSOAI-ORG/explainability-report-mcp/stargazers)
 
-## Quick Start
+# uexplainabilityU reportU mcp
+
+**By [MEOK AI Labs](https://meok.ai) | The only MCP server for AI explainability and transparency reports.**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/explainability-report-mcp)](https://www.npmjs.com/package/@meok-ai/explainability-report-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/explainability-report-mcp/issues)
+
+</div>
+
+---
+
+## Installation
 
 ```bash
 pip install explainability-report-mcp
-explainability-report-mcp
+# or
+npm install -g @meok-ai/explainability-report-mcp
 ```
 
-Or run directly:
+## Quick Start
 
-```bash
-pip install mcp
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Claude Desktop Config
+## Enterprise Support
 
-Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "explainability-report": {
-      "command": "explainability-report-mcp"
-    }
-  }
-}
-```
-
-## Tools
-
-| Tool | Description | API Key Required |
-|------|-------------|-----------------|
-| `quick_scan` | Describe an AI system, get transparency assessment | No |
-| `generate_model_card` | Generate EU AI Act compliant model card | No (free tier) |
-| `explain_decision` | Generate human-readable explanation of an AI decision | No (free tier) |
-| `transparency_audit` | Assess against EU AI Act Article 13 transparency requirements | No (free tier) |
-| `create_impact_assessment` | Generate DPIA/AIIA template | No (free tier) |
-
-## Free Tier
-
-10 calls/day per tool, no API key required. Upgrade to Pro ($29/mo) for unlimited access at [meok.ai](https://meok.ai/mcp/explainability-report/pro).
-
-## Examples
-
-### Quick Scan (zero config)
-```
-quick_scan("Credit scoring model using gradient boosted trees trained on 5 years of loan data")
-```
-
-### Generate Model Card
-```
-generate_model_card("CreditScore-v2", "Predict loan default probability for retail banking customers")
-```
-
-### Explain a Decision
-```
-explain_decision("Loan application denied", "credit_score:620,income:35000,debt_ratio:0.45")
-```
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT - Built by [MEOK AI Labs](https://meok.ai)
+MIT © [CSOAI](https://csoai.org)
