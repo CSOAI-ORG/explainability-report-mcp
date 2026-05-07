@@ -278,7 +278,23 @@ mcp = FastMCP(
 # ---------------------------------------------------------------------------
 @mcp.tool()
 def quick_scan(description: str) -> dict:
-    """Describe an AI system -> instant transparency and explainability assessment. No API key required."""
+    """Describe an AI system -> instant transparency and explainability assessment. No API key required.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     limit_err = _check_rate_limit("quick_scan_anonymous")
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -374,6 +390,20 @@ def generate_model_card(
         purpose: Description of the model's intended purpose.
         training_data: Description of training data used (leave empty if not available).
         api_key: Optional MEOK API key for pro tier.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -579,6 +609,20 @@ def explain_decision(
         decision: The AI decision or prediction to explain (e.g. "Loan application denied").
         factors: Comma-separated contributing factors (e.g. "credit_score:620,income:35000,debt_ratio:0.45"). Leave empty for generic guidance.
         api_key: Optional MEOK API key for pro tier.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -726,6 +770,21 @@ def transparency_audit(
     Args:
         system_description: Detailed description of the AI system including its purpose, capabilities, data, and deployment context.
         api_key: Optional MEOK API key for pro tier.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -848,6 +907,20 @@ def create_impact_assessment(
         system_name: Name of the AI system.
         affected_groups: Comma-separated list of affected groups (e.g. "employees,customers,public"). Leave empty for generic template.
         api_key: Optional MEOK API key for pro tier.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
