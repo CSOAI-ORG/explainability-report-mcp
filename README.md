@@ -1,3 +1,5 @@
+[![explainability-report-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/explainability-report-mcp)](https://github.com/CSOAI-ORG/explainability-report-mcp/stargazers)
