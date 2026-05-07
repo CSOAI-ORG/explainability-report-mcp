@@ -1,3 +1,7 @@
+[![explainability-report-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/explainability-report-mcp)](https://pypi.org/project/explainability-report-mcp/)
+
 [![explainability-report-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp)
 
 <div align="center">
