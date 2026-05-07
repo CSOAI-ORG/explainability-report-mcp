@@ -4,7 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "explainability-report-mcp"
-version = "1.0.2"
+version = "1.0.3"
+readme = "README.md"
 description = "AI explainability and transparency reports for AI agents. Instant transparency scan, model cards, decision explanations, Article 13 audits, impact assessments. Zero-config free tier. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
