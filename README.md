@@ -1,45 +1,59 @@
-[![explainability-report-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/explainability-report-mcp)](https://pypi.org/project/explainability-report-mcp/)
-
-[![explainability-report-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/explainability-report-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/explainability-report-mcp)](https://github.com/CSOAI-ORG/explainability-report-mcp/stargazers)
+# Explainability Report MCP
 
-# uexplainabilityU reportU mcp
+**MCP server for explainability report mcp operations**
 
-**By [MEOK AI Labs](https://meok.ai) | The only MCP server for AI explainability and transparency reports.**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/explainability-report-mcp)](https://www.npmjs.com/package/@meok-ai/explainability-report-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-explainability-report-mcp)](https://pypi.org/project/meok-explainability-report-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/explainability-report-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Explainability Report MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `quick_scan` | Describe an AI system -> instant transparency and explainability assessment. No  |
+| `generate_model_card` | Generate an EU AI Act compliant model card with structured transparency informat |
+| `explain_decision` | Generate a human-readable explanation of an AI decision. |
+| `transparency_audit` | Assess an AI system against EU AI Act Article 13 transparency requirements. |
+| `create_impact_assessment` | Generate a DPIA/AIIA (AI Impact Assessment) template for an AI system. |
 
 ## Installation
 
 ```bash
-pip install explainability-report-mcp
-# or
-npm install -g @meok-ai/explainability-report-mcp
+pip install meok-explainability-report-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "explainability-report-mcp": {
+      "command": "python",
+      "args": ["-m", "meok_explainability_report_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/explainability-report-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
