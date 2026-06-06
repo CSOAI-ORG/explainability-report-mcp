@@ -25,7 +25,6 @@ import sys, os
 _MEOK_API_KEY = _os.environ.get("MEOK_API_KEY", "")
 
 try:
-    sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
     from auth_middleware import check_access as _shared_check_access
     _AUTH_ENGINE_AVAILABLE = True
 except ImportError:
@@ -38,7 +37,7 @@ except ImportError:
             return True, "OK", "pro"
         if _MEOK_API_KEY and api_key and api_key != _MEOK_API_KEY:
             return False, "Invalid API key. Get one at https://meok.ai/api-keys", "free"
-        return True, "OK", "free"
+        return True, "OK, Pro at https://www.csoai.org/checkout", "free"
 
 
 def check_access(api_key=""):
@@ -435,7 +434,7 @@ def generate_model_card(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     limit_err = _check_rate_limit("model_card", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -654,7 +653,7 @@ def explain_decision(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     limit_err = _check_rate_limit("explain_decision", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -830,7 +829,7 @@ def transparency_audit(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     limit_err = _check_rate_limit("transparency_audit", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -966,7 +965,7 @@ def create_impact_assessment(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     limit_err = _check_rate_limit("impact_assessment", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
