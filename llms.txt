@@ -1,0 +1,32 @@
+# Explainability Report MCP
+
+> By [MEOK AI Labs](https://meok
+
+`explainability-report-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+
+## Install
+
+```bash
+pip install explainability-report-mcp
+```
+
+Or run without installing:
+
+```bash
+uvx explainability-report-mcp
+```
+
+## Tools
+
+- `quick_scan` — Describe an AI system -> instant transparency and explainability assessment. No API key required.
+- `generate_model_card` — Generate an EU AI Act compliant model card with structured transparency information.
+- `explain_decision` — Generate a human-readable explanation of an AI decision.
+- `transparency_audit` — Assess an AI system against EU AI Act Article 13 transparency requirements.
+- `create_impact_assessment` — Generate a DPIA/AIIA (AI Impact Assessment) template for an AI system.
+
+## Links
+
+- Source: https://github.com/CSOAI-ORG/explainability-report-mcp
+- PyPI: https://pypi.org/project/explainability-report-mcp/
+- MEOK AI Labs: https://meok.ai
+- Council of AI: https://councilof.ai
