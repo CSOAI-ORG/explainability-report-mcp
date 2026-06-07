@@ -1,0 +1,10 @@
+{
+  "name": "Explainability Report",
+  "description": "Automated XAI compliance reports for high-risk AI systems",
+  "vendor": "MEOK AI Labs",
+  "sourceUrl": "https://github.com/CSOAI-ORG/explainability-report-mcp",
+  "homepage": "https://meok.ai/mcp/explainability-report-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "server.py"
+}

@@ -1,32 +1,36 @@
-# Explainability Report MCP
-
-> By [MEOK AI Labs](https://meok
-
-`explainability-report-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# explainability-report-mcp
+# **MCP server for explainability report mcp operations**
 
 ## Install
-
 ```bash
 pip install explainability-report-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx explainability-report-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `quick_scan` — Describe an AI system -> instant transparency and explainability assessment. No API key required.
-- `generate_model_card` — Generate an EU AI Act compliant model card with structured transparency information.
-- `explain_decision` — Generate a human-readable explanation of an AI decision.
-- `transparency_audit` — Assess an AI system against EU AI Act Article 13 transparency requirements.
-- `create_impact_assessment` — Generate a DPIA/AIIA (AI Impact Assessment) template for an AI system.
+### `quick_scan`
+Describe an AI system -> instant transparency and explainability assessment. No API key required.
 
-## Links
+### `generate_model_card`
+Generate an EU AI Act compliant model card with structured transparency information.
 
-- Source: https://github.com/CSOAI-ORG/explainability-report-mcp
-- PyPI: https://pypi.org/project/explainability-report-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `explain_decision`
+Generate a human-readable explanation of an AI decision.
+
+### `transparency_audit`
+Assess an AI system against EU AI Act Article 13 transparency requirements.
+
+### `create_impact_assessment`
+Generate a DPIA/AIIA (AI Impact Assessment) template for an AI system.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

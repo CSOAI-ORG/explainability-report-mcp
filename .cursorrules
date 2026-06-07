@@ -1,0 +1,9 @@
+# explainability-report-mcp - Auto-trigger Rules
+
+When the user asks about explainability report, use explainability-report-mcp tools: quick_scan, generate_model_card, explain_decision, transparency_audit, create_impact_assessment
+
+**MCP server for explainability report mcp operations**
+
+Install: `pip install explainability-report-mcp`
+
+By MEOK AI Labs — MIT licensed.
