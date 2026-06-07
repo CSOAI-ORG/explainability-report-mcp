@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "explainability-report-mcp",
+    "description": "Explainability Report MCP Server by MEOK AI Labs",
+    "version": "1.0.10",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "explainability-report-mcp"
+      }
+    ],
+    "capabilities": [
+      "quick_scan",
+      "generate_model_card",
+      "explain_decision",
+      "transparency_audit",
+      "create_impact_assessment"
+    ]
+  }
+}

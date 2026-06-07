@@ -1,0 +1,68 @@
+{
+  "name": "explainability-report-mcp",
+  "description": "Explainability Report MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/explainability-report-mcp.html",
+  "version": "1.0.10",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "quick_scan",
+      "name": "Quick Scan",
+      "description": "quick_scan via explainability-report-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_model_card",
+      "name": "Generate Model Card",
+      "description": "generate_model_card via explainability-report-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "explain_decision",
+      "name": "Explain Decision",
+      "description": "explain_decision via explainability-report-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "transparency_audit",
+      "name": "Transparency Audit",
+      "description": "transparency_audit via explainability-report-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_impact_assessment",
+      "name": "Create Impact Assessment",
+      "description": "create_impact_assessment via explainability-report-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
