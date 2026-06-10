@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "explainability-report-mcp"
-version = "1.0.10"
+version = "1.0.13"
 readme = "README.md"
 description = "AI explainability and transparency reports for AI agents. Instant transparency scan, model cards, decision explanations, Article 13 audits, impact assessments. Zero-config free tier. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -25,7 +25,7 @@ Repository = "https://github.com/CSOAI-ORG/explainability-report-mcp"
 
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["auth_middleware.py", "server.py"]
 
 [project.scripts]
 explainability-report-mcp = "server:main"
