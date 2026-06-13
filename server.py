@@ -21,6 +21,8 @@ from mcp.server.fastmcp import FastMCP
 # -- Authentication --------------------------------------------------------
 import os as _os
 import sys, os
+import urllib.request as _meter_urlreq
+import urllib.error as _meter_urlerr
 
 _MEOK_API_KEY = _os.environ.get("MEOK_API_KEY", "")
 
@@ -47,7 +49,7 @@ def check_access(api_key=""):
 
 
 # -- Rate limiting ---------------------------------------------------------
-FREE_DAILY_LIMIT = 10
+FREE_DAILY_LIMIT = 50
 PRO_TIER_UNLIMITED = True  # Pro: $29/mo unlimited at https://meok.ai/mcp/explainability-report/pro
 _usage = defaultdict(list)  # type: Dict[str, List[datetime]]
 
@@ -275,6 +277,27 @@ mcp = FastMCP(
 # ---------------------------------------------------------------------------
 # Tool: quick_scan -- ZERO config, no API key, instant result
 # ---------------------------------------------------------------------------
+
+def _server_meter_check(api_key: str = "") -> dict:
+    """Calls the live /verify endpoint for server-side metering. Returns the JSON dict.
+    Fail-open: if /verify is unreachable or KV isn't configured, returns allowed=True
+    (so the local rate-limit in _check_rate_limit remains the safety net)."""
+    try:
+        data = json.dumps({"api_key": api_key, "tool": ""}).encode()
+        req = _meter_urlreq.Request(_METER_URL, data=data,
+            headers={"Content-Type": "application/json"}, method="POST")
+        with _meter_urlreq.urlopen(req, timeout=2.5) as r:
+            d = json.loads(r.read())
+            if isinstance(d, dict) and "allowed" in d:
+                return d
+    except Exception:
+        pass
+    return {"allowed": True, "tier": "anonymous", "remaining": 200, "upgrade_url": "https://meok.ai/pricing"}
+
+
+_METER_URL = "https://proofof.ai/verify"
+
+
 @mcp.tool()
 def quick_scan(description: str) -> dict:
     """Describe an AI system -> instant transparency and explainability assessment. No API key required.
@@ -434,7 +457,7 @@ def generate_model_card(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
     limit_err = _check_rate_limit("model_card", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -653,7 +676,7 @@ def explain_decision(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
     limit_err = _check_rate_limit("explain_decision", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -829,7 +852,7 @@ def transparency_audit(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
     limit_err = _check_rate_limit("transparency_audit", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -965,7 +988,7 @@ def create_impact_assessment(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"}
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
     limit_err = _check_rate_limit("impact_assessment", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -1180,7 +1203,7 @@ if __name__ == "__main__":
 # ── MEOK monetization layer (Stripe upgrade · PAYG · pricing) ──────────
 # Free tier is zero-config. Upgrade to Pro (unlimited) or pay-as-you-go per call.
 import os as _meok_os
-MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j"  # Pro (unlimited)
+MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"  # Pro (unlimited)
 MEOK_PAYG_KEY = _meok_os.environ.get("MEOK_PAYG_KEY", "")  # set to enable PAYG (x402 / ~GBP0.05 per call)
 MEOK_PRICING = "https://meok.ai/pricing"
 
