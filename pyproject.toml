@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "explainability-report-mcp"
-version = "1.0.14"
+version = "1.0.15"
 readme = "README.md"
 description = "AI explainability and transparency reports for AI agents. Instant transparency scan, model cards, decision explanations, Article 13 audits, impact assessments. Zero-config free tier. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -29,3 +29,22 @@ only-include = ["auth_middleware.py", "server.py"]
 
 [project.scripts]
 explainability-report-mcp = "server:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "N"]
+ignore = ["E501"]
+
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_Configs = true
+disallow_untyped_defs = true
+

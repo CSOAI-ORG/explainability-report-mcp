@@ -115,3 +115,33 @@ Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographical
 > Verify any signed report at <https://meok.ai/verify>.
 
 <!-- BUY-LADDER:END -->
+
+## See also
+
+MEOK compliance MCP fleet:
+[`meok-watermark-attest-mcp`](https://github.com/CSOAI-ORG/meok-watermark-attest-mcp)
+
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "explainability-report-mcp": {
+      "command": "uvx",
+      "args": ["explainability-report-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install explainability-report-mcp` then run the `explainability-report-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `quick_scan` to …"
+- "Use `generate_model_card` to …"
+- "Use `explain_decision` to …"
