@@ -457,7 +457,11 @@ def generate_model_card(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
+<<<<<<< Updated upstream
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+=======
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+>>>>>>> Stashed changes
     limit_err = _check_rate_limit("model_card", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -676,7 +680,11 @@ def explain_decision(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
+<<<<<<< Updated upstream
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+=======
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+>>>>>>> Stashed changes
     limit_err = _check_rate_limit("explain_decision", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -852,7 +860,11 @@ def transparency_audit(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
+<<<<<<< Updated upstream
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+=======
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+>>>>>>> Stashed changes
     limit_err = _check_rate_limit("transparency_audit", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
@@ -988,7 +1000,11 @@ def create_impact_assessment(
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
+<<<<<<< Updated upstream
         return {"error": msg, "upgrade_url": "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"}
+=======
+        return {"error": msg, "upgrade_url": "https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836"}
+>>>>>>> Stashed changes
     limit_err = _check_rate_limit("impact_assessment", tier)
     if limit_err:
         return {"error": "rate_limited", "message": limit_err}
